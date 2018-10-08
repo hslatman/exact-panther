@@ -1,0 +1,4 @@
+parameters:
+    username: '%env(EXACT_USERNAME)%'
+    password: '%env(EXACT_PASSWORD)%'
+    otp_seed: '%env(EXACT_OTP_SEED)%'
