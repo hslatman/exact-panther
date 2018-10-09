@@ -72,8 +72,10 @@ class ExactService
 
 
         $previous_monday = (new Carbon())->previous(Carbon::MONDAY);
+        if (!(new Carbon())->isMonday()) {
+            $previous_monday->subWeek();
+        }
         $previous_sunday = (clone $previous_monday)->next(Carbon::SUNDAY);
-
 
         // Bit hacky, but sendKeys does not work :-( Send the From, To and <Traject> fields
         $this->client->executeScript(
